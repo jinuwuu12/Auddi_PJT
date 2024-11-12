@@ -65,6 +65,8 @@ RANDOMIZE_DOWNLOAD_DELAY = True
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    "auddi_scrap.pipelines.bobaePipeline": 300,
+   "auddi_scrap.pipelines.bobaeCommentPipeline": 400,
+   
    
 }
  

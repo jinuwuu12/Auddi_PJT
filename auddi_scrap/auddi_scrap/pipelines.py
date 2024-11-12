@@ -82,3 +82,28 @@ class bobaePipeline:
         # 딕셔너리 형태로 변환 후 리스트에 추가
         self.items.append(dict(item))
         return item
+    
+    
+class bobaeCommentPipeline:
+    def __init__(self):
+        # items 리스트를 초기화
+        self.items = []
+
+    def open_spider(self, spider):
+        self.items = []
+
+    def close_spider(self, spider):
+        # 수집된 아이템 리스트를 데이터프레임으로 변환
+        df = pd.DataFrame(self.items)
+        
+        # 파일 경로 설정 (원하는 경로로 변경 가능)
+        file_path = r"C:/Users/PC/Desktop/크롤링 데이터/보배외제차댓글.xlsx"
+        
+        # 엑셀 파일로 저장
+        df.to_excel(file_path, index=False)
+        print(f"데이터가 엑셀 파일로 저장되었습니다: {file_path}")
+
+    def process_item(self, item, spider):
+        # 딕셔너리 형태로 변환 후 리스트에 추가
+        self.items.append(dict(item))
+        return item

@@ -16,6 +16,7 @@ class CommunitySpider(scrapy.Spider):
             item = kukminScrapItem()
             item['source'] = '스포츠/연예'
             item['title']  = link.css('.tit.fs_lg20.fs_xs16.fw_lgmd.lh_lg15 a::text').extract()[0]
+            
             item['date']   = link.css('.date.gray500.fs_lg14.fw_lgrg::text').get()
             item['url']    = link.css('.tit.fs_lg20.fs_xs16.fw_lgmd.lh_lg15 a::attr(href)').get()
             
