@@ -32,6 +32,7 @@ class bobaeCommunityItem(scrapy.Item):
     gall_title = scrapy.Field()
     gall_url   = scrapy.Field()
     gall_count = scrapy.Field()
+    gall_content = scrapy.Field()
     gall_benz_comment  = scrapy.Field()
     gall_audi_comment  = scrapy.Field()
     gall_bmw_comment   = scrapy.Field()
